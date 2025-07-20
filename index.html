@@ -119,7 +119,6 @@
         flex-direction: column;
         align-items: center;
         padding: 1.5rem 0 1rem 0;
-        border-radius: 0 0 16px 16px;
         box-sizing: border-box;
         z-index: 2;
         box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
@@ -146,7 +145,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 2rem; /* Increased gap between address and buttons */
+        margin-top: 8px;
       }
       .contact-bar .contact-row {
         display: flex;
@@ -216,16 +215,20 @@
         .contact-bar {
           padding: 1rem 0.2rem;
           font-size: 0.9rem;
+          bottom: -3rem;
         }
         .contact-bar .contact-row {
-          font-size: 1rem;
+          font-size: 12px;
         }
         .contact-bar .contact-btn {
-          font-size: 0.8rem;
-          padding: 0.2rem 0.5rem;
+          font-size: 0.7rem;
+          padding: 0.15rem 0.3rem;
         }
-        .contact-bar .contact-btn i {
-          font-size: 1rem;
+        .contact-bar .contact-btn i,
+        .contact-bar .contact-btn svg {
+          font-size: 0.9rem !important;
+          width: 18px !important;
+          height: 18px !important;
         }
         .contact-bar .contact-buttons {
           gap: 0.3rem;
@@ -268,20 +271,8 @@
         <div class="first-image-container">
           <img src="images/master kitchen_page-0001.jpg" alt="Kitchen Page 1" />
           <div class="contact-bar">
-            <div class="contact-address">
-              <div
-                class="contact-row"
-                style="display: flex; flex-direction: row"
-              >
-                <i class="material-icons">place</i>
-                <span
-                  >Bridgestone Road Behind The Chamber Of Commerce, Yanbu Al
-                  Bahr.</span
-                >
-              </div>
-            </div>
             <div class="contact-buttons">
-              <a href="#" target="_blank" class="contact-btn"
+              <a href="https://www.instagram.com/masterkitchenyanbu?igsh=NWFkanc2NWozamhi" target="_blank" class="contact-btn"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   x="0px"
@@ -311,6 +302,18 @@
                 class="contact-btn"
                 ><i class="material-icons">place</i>LOCATION</a
               >
+            </div>
+            <div class="contact-address">
+              <div
+                class="contact-row"
+                style="display: flex; flex-direction: row"
+              >
+                <i class="material-icons">place</i>
+                <span
+                  >Bridgestone Road Behind The Chamber Of Commerce, Yanbu Al
+                  Bahr.</span
+                >
+              </div>
             </div>
           </div>
         </div>
