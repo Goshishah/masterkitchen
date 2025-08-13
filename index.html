@@ -201,6 +201,75 @@
       .contact-bar .contact-btn i {
         font-size: 1.1rem;
       }
+      /* Responsive grid and button styles for app store/play store buttons */
+      .app-market-grid {
+        width: 100%;
+        max-width: 920px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+      .app-market-btn {
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        border-radius: 14px;
+        background: #fec305;
+        text-decoration: none;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.5);
+        transition: transform .12s ease;
+        outline: none;
+      }
+      .app-market-btn:hover {
+        transform: translateY(-3px);
+      }
+      .app-market-btn img {
+        width: 32px;
+        height: 32px;
+        border-radius: 7px;
+        object-fit: cover;
+        flex-shrink: 0;
+        margin-right: 7px;
+        margin-left: 7px;
+        border: 1px solid rgba(0,0,0,0.06);
+      }
+      .app-market-label {
+        display: flex;
+        flex-direction: column;
+        color: #111;
+      }
+      .app-market-label span:first-child {
+        font-size: 8px;
+        font-weight: 600;
+        opacity: 0.95;
+      }
+      .app-market-label span:last-child {
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.1px;
+      }
+      @media (max-width: 600px) {
+        .app-market-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 7px;
+        }
+        .app-market-btn {
+          padding: 5px;
+          border-radius: 10px;
+        }
+        .app-market-btn img {
+          width: 24px;
+          height: 24px;
+          margin-right: 5px;
+          margin-left: 5px;
+        }
+        .app-market-label span:first-child {
+          font-size: 7px;
+        }
+        .app-market-label span:last-child {
+          font-size: 10px;
+        }
+      }
       @media (max-width: 600px) {
         .container {
           margin: 16px auto;
@@ -273,7 +342,6 @@
           margin-bottom: 0;
         }
       }
-
       .market-btn {
     display: inline-block;
     padding: 0.3125rem 0.875rem;
@@ -303,10 +371,10 @@
     text-decoration: none;
 }
 .apple-btn {
-    background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAzMDUgMzA1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzMDUgMzA1OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjRweCI+CjxnIGlkPSJYTUxJRF8yMjhfIj4KCTxwYXRoIGlkPSJYTUxJRF8yMjlfIiBkPSJNNDAuNzM4LDExMi4xMTljLTI1Ljc4NSw0NC43NDUtOS4zOTMsMTEyLjY0OCwxOS4xMjEsMTUzLjgyQzc0LjA5MiwyODYuNTIzLDg4LjUwMiwzMDUsMTA4LjIzOSwzMDUgICBjMC4zNzIsMCwwLjc0NS0wLjAwNywxLjEyNy0wLjAyMmM5LjI3My0wLjM3LDE1Ljk3NC0zLjIyNSwyMi40NTMtNS45ODRjNy4yNzQtMy4xLDE0Ljc5Ny02LjMwNSwyNi41OTctNi4zMDUgICBjMTEuMjI2LDAsMTguMzksMy4xMDEsMjUuMzE4LDYuMDk5YzYuODI4LDIuOTU0LDEzLjg2MSw2LjAxLDI0LjI1Myw1LjgxNWMyMi4yMzItMC40MTQsMzUuODgyLTIwLjM1Miw0Ny45MjUtMzcuOTQxICAgYzEyLjU2Ny0xOC4zNjUsMTguODcxLTM2LjE5NiwyMC45OTgtNDMuMDFsMC4wODYtMC4yNzFjMC40MDUtMS4yMTEtMC4xNjctMi41MzMtMS4zMjgtMy4wNjZjLTAuMDMyLTAuMDE1LTAuMTUtMC4wNjQtMC4xODMtMC4wNzggICBjLTMuOTE1LTEuNjAxLTM4LjI1Ny0xNi44MzYtMzguNjE4LTU4LjM2Yy0wLjMzNS0zMy43MzYsMjUuNzYzLTUxLjYwMSwzMC45OTctNTQuODM5bDAuMjQ0LTAuMTUyICAgYzAuNTY3LTAuMzY1LDAuOTYyLTAuOTQ0LDEuMDk2LTEuNjA2YzAuMTM0LTAuNjYxLTAuMDA2LTEuMzQ5LTAuMzg2LTEuOTA1Yy0xOC4wMTQtMjYuMzYyLTQ1LjYyNC0zMC4zMzUtNTYuNzQtMzAuODEzICAgYy0xLjYxMy0wLjE2MS0zLjI3OC0wLjI0Mi00Ljk1LTAuMjQyYy0xMy4wNTYsMC0yNS41NjMsNC45MzEtMzUuNjExLDguODkzYy02LjkzNiwyLjczNS0xMi45MjcsNS4wOTctMTcuMDU5LDUuMDk3ICAgYy00LjY0MywwLTEwLjY2OC0yLjM5MS0xNy42NDUtNS4xNTljLTkuMzMtMy43MDMtMTkuOTA1LTcuODk5LTMxLjEtNy44OTljLTAuMjY3LDAtMC41MywwLjAwMy0wLjc4OSwwLjAwOCAgIEM3OC44OTQsNzMuNjQzLDU0LjI5OCw4OC41MzUsNDAuNzM4LDExMi4xMTl6IiBmaWxsPSIjMmUyZTJlIi8+Cgk8cGF0aCBpZD0iWE1MSURfMjMwXyIgZD0iTTIxMi4xMDEsMC4wMDJjLTE1Ljc2MywwLjY0Mi0zNC42NzIsMTAuMzQ1LTQ1Ljk3NCwyMy41ODNjLTkuNjA1LDExLjEyNy0xOC45ODgsMjkuNjc5LTE2LjUxNiw0OC4zNzkgICBjMC4xNTUsMS4xNywxLjEwNywyLjA3MywyLjI4NCwyLjE2NGMxLjA2NCwwLjA4MywyLjE1LDAuMTI1LDMuMjMyLDAuMTI2YzE1LjQxMywwLDMyLjA0LTguNTI3LDQzLjM5NS0yMi4yNTcgICBjMTEuOTUxLTE0LjQ5OCwxNy45OTQtMzMuMTA0LDE2LjE2Ni00OS43N0MyMTQuNTQ0LDAuOTIxLDIxMy4zOTUtMC4wNDksMjEyLjEwMSwwLjAwMnoiIGZpbGw9IiMyZTJlMmUiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K);
+    background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAzMDUgMzA1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzMDUgMzA1OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjRweCI+CjxnIGlkPSJYTUxJRF8yMjhfIj4KCTxwYXRoIGlkPSJYTUxJRF8yMjlfIiBkPSJNNDAuNzM4LDExMi4xMTljLTI1Ljc4NSw0NC43NDUtOS4zOTMsMTEyLjY0OCwxOS4xMjEsMTUzLjgyQzc0LjA5MiwyODYuNTIzLDg4LjUwMiwzMDUsMTA4LjIzOSwzMDUgICBjMC4zNzIsMCwwLjc0NS0wLjAwNywxLjEyNy0wLjAyMmM5LjI3My0wLjM3LDE1Ljk3NC0zLjIyNSwyMi40NTMtNS45ODRjNy4yNzQtMy4xLDE0Ljc5Ny02LjMwNSwyNi41OTctNi4zMDUgICBjMTEuMjI2LDAsMTguMzksMy4xMDEsMjUuMzE4LDYuMDk5YzYuODI4LDIuOTU0LDEzLjg2MSw2LjAxLDI0LjI1Myw1LjgxNWMyMi4yMzItMC40MTQsMzUuODgyLTIwLjM1Miw0Ny45MjUtMzcuOTQxICAgYzEyLjU2Ny0xOC4zNjUsMTguODcxLTM2LjE5NiwyMC45OTgtNDMuMDFsMC4wODYtMC4yNzFjMC40MDUtMS4yMTEtMC4xNjctMi41MzMtMS4zMjgtMy4wNjZjLTAuMDMyLTAuMDE1LTAuMTUtMC4wNjQtMC4xODMtMC4wNzggICBjLTMuOTE1LTEuNjAxLTM4LjI1Ny0xNi44MzYtMzguNjE4LTU4LjM2Yy0wLjMzNS0zMy43MzYsMjUuNzYzLTUxLjYwMSwzMC45OTctNTQuODM5bDAuMjQ0LTAuMTUyICAgYzAuNTY3LTAuMzY1LDAuOTYyLTAuOTQ0LDEuMDk2LTEuNjA2YzAuMTM0LTAuNjYxLTAuMDA2LTEuMzQ5LTAuMzg2LTEuOTA1Yy0xOC4wMTQtMjYuMzYyLTQ1LjYyNC0zMC4zMzUtNTYuNzQtMzAuODEzICAgYy0xLjYxMy0wLjE2MS0zLjI3OC0wLjI0Mi00Ljk1LTAuMjQyYy0xMy4wNTYsMC0yNS41NjMsNC45MzEtMzUuNjExLDguODkzYy02LjkzNiwyLjczNS0xMi45MjcsNS4wOTctMTcuMDU5LDUuMDk3ICAgYy00LjY0MywwLTEwLjY2OC0yLjM5MS0xNy42NDUtNS4xNTljLTkuMzMtMy43MDMtMTkuOTA1LTcuODk5LTMxLjEtNy44OTljLTAuMjY3LDAtMC41MywwLjAwMy0wLjc4OSwwLjAwOCAgIEM3OC44OTQsNzMuNjQzLDU0LjI5OCw4OC41MzUsNDAuNzM4LDExMi4xMTl6IiBmaWxsPSIjMmUyZTJlIi8+Cgk8cGF0aCBpZD0iWE1MSURfMjMwXyIgZD0iTTIxMi4xMDEsMC4wMDJjLTE1Ljc2MywwLjY0Mi0zNC42NzIsMTAuMzQ1LTQ1Ljk3NCwyMy41ODNjLTkuNjA1LDExLjEyNy0xOC45ODgsMjkuNjc5LTE2LjUxNiw0OC4zNzkgICBjMC4xNTUsMS4xNywxLjEwNywyLjA3MywyLjI4NCwyLjE2NGMxLjA2NCwwLjA4MywyLjE1LDAuMTI1LDMuMjMyLDAuMTI2YzE1LjQxMywwLDMyLjA0LTguNTI3LDQzLjM5NS0yMi4yNTcgICBjMTEuOTUxLTE0LjQ5OCwxNy45OTQtMzMuMTA0LDE2LjE2Ni00OS43N0MyMTQuNTQ0LDAuOTIxLDIxMy4zOTUtMC4wNDksMjEyLjEwMSwwLjAwMnoiIGZpbGw9IiMyZTJlMmUiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K);
 }
 .google-btn {
-    background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBvbHlnb24gc3R5bGU9ImZpbGw6IzVDREFERDsiIHBvaW50cz0iMjkuNTMsMCAyOS41MywyNTEuNTA5IDI5LjUzLDUxMiAyOTkuMDA0LDI1MS41MDkgIi8+Cjxwb2x5Z29uIHN0eWxlPSJmaWxsOiNCREVDQzQ7IiBwb2ludHM9IjM2OS4wNjcsMTgwLjU0NyAyNjIuMTc1LDExOS40NjcgMjkuNTMsMCAyOTkuMDA0LDI1MS41MDkgIi8+Cjxwb2x5Z29uIHN0eWxlPSJmaWxsOiNEQzY4QTE7IiBwb2ludHM9IjI5LjUzLDUxMiAyOS41Myw1MTIgMjYyLjE3NSwzODMuNTUxIDM2OS4wNjcsMzIyLjQ3IDI5OS4wMDQsMjUxLjUwOSAiLz4KPHBhdGggc3R5bGU9ImZpbGw6I0ZGQ0E5NjsiIGQ9Ik0zNjkuMDY3LDE4MC41NDdsLTcwLjA2Myw3MC45NjFsNzAuMDYzLDcwLjk2MWwxMDguNjg4LTYyLjg3N2M2LjI4OC0zLjU5Myw2LjI4OC0xMS42NzcsMC0xNS4yNyAgTDM2OS4wNjcsMTgwLjU0N3oiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==);
+    background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBvbHlnb24gc3R5bGU9ImZpbGw6IzVDREFERDsiIHBvaW50cz0iMjkuNTMsMCAyOS41MywyNTEuNTA5IDI5LjUzLDUxMiAyOTkuMDA0LDI1MS41MDkgIi8+Cjxwb2x5Z29uIHN0eWxlPSJmaWxsOiNCREVDQzQ7IiBwb2ludHM9IjM2OS4wNjcsMTgwLjU0NyAyNjIuMTc1LDExOS40NjcgMjkuNTMsMCAyOTkuMDA0LDI1MS41MDkgIi8+Cjxwb2x5Z29uIHN0eWxlPSJmaWxsOiNEQzY4QTE7IiBwb2ludHM9IjI5LjUzLDUxMiAyOS41Myw1MTIgMjYyLjE3NSwzODMuNTUxIDM2OS4wNjcsMzIyLjQ3IDI5OS4wMDQsMjUxLjUwOSAiLz4KPHBhdGggc3R5bGU9ImZpbGw6I0ZGQ0E5NjsiIGQ9Ik0zNjkuMDY3LDE4MC41NDdsLTcwLjA2Myw3MC45NjFsNzAuMDYzLDcwLjk2MWwxMDguNjg4LTYyLjg3N2M2LjI4OC0zLjU5Myw2LjI4OC0xMS42NzcsMC0xNS4yNyAgTDM2OS4wNjcsMTgwLjU0N3oiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==);
 }
     </style>
   </head>
@@ -356,83 +424,39 @@
                 >
               </div>
             </div>
-            <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
-    <!-- Keeta -->
-     <!-- <a href="https://apps.apple.com/sa/app/keeta/id6476895314" target="_blank" class="market-btn apple-btn" role="button">
-  <img src="https://play-lh.googleusercontent.com/Vj2KBgg77BnwlCXlg-7lGPCoyqtjgS2KakhKL9i_aS0zztqFKmOpqgqNe5oTuAFYM78" style="height:60px;background-color: transparent;"/>
-</a> -->
-
-<div style="width:100%; max-width:920px; display:grid; grid-template-columns:repeat(4,1fr); gap:10px;">
-
+            <div class="app-market-grid">
     <!-- Keeta - App Store -->
-    <a href="https://apps.apple.com/us/app/keeta-food-delivery/id1662451643" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;padding:8px;border-radius:14px;background:#fec305;text-decoration:none;box-shadow:0 12px 30px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.5);transition:transform .12s ease;outline:none;"
-       onmouseover="this.style.transform='translateY(-3px)';" onmouseout="this.style.transform='translateY(0)';" aria-label="Keeta on the App Store">
-      <!-- Logo - replace src with your Keeta logo -->
-    
-      <img src="https://play-lh.googleusercontent.com/Vj2KBgg77BnwlCXlg-7lGPCoyqtjgS2KakhKL9i_aS0zztqFKmOpqgqNe5oTuAFYM78=w200-h380-rw" alt="Keeta logo" style="width:32px;height:32px;border-radius:7px;object-fit:cover;flex-shrink:0;margin-right:7px;margin-left:7px;border:1px solid rgba(0,0,0,0.06);" />
-      <div style="display:flex;flex-direction:column; color:#111;">
-        <span style="font-size:8px;font-weight:600;opacity:0.95;">Download on</span>
-        <span style="font-size:12px;font-weight:800;letter-spacing:0.1px;">App Store</span>
+    <a href="https://apps.apple.com/us/app/keeta-food-delivery/id1662451643" target="_blank" rel="noopener noreferrer" class="app-market-btn" aria-label="Keeta on the App Store">
+      <img src="https://play-lh.googleusercontent.com/Vj2KBgg77BnwlCXlg-7lGPCoyqtjgS2KakhKL9i_aS0zztqFKmOpqgqNe5oTuAFYM78=w200-h380-rw" alt="Keeta logo" />
+      <div class="app-market-label">
+        <span>Download on</span>
+        <span>App Store</span>
       </div>
      </a>
-
     <!-- Keeta - Google Play -->
-    <a href="https://play.google.com/store/apps/details?id=com.sankuai.sailor.afooddelivery" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;padding:8px;border-radius:14px;background:#fec305;text-decoration:none;box-shadow:0 12px 30px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.5);transition:transform .12s ease;outline:none;"
-       onmouseover="this.style.transform='translateY(-3px)';" onmouseout="this.style.transform='translateY(0)';" aria-label="Keeta on Google Play">
-     
-      <img src="https://play-lh.googleusercontent.com/Vj2KBgg77BnwlCXlg-7lGPCoyqtjgS2KakhKL9i_aS0zztqFKmOpqgqNe5oTuAFYM78=w240-h480-rw" alt="Keeta logo" style="width:32px;height:32px;border-radius:7px;object-fit:cover;flex-shrink:0;margin-right:7px;margin-left:7px;border:1px solid rgba(0,0,0,0.06);" />
-      <div style="display:flex;flex-direction:column;color:#111;">
-        <span style="font-size:8px;font-weight:600;opacity:0.95;">Get it on</span>
-        <span style="font-size:12px;font-weight:800;letter-spacing:0.1px;">Google Play</span>
+    <a href="https://play.google.com/store/apps/details?id=com.sankuai.sailor.afooddelivery" target="_blank" rel="noopener noreferrer" class="app-market-btn" aria-label="Keeta on Google Play">
+      <img src="https://play-lh.googleusercontent.com/Vj2KBgg77BnwlCXlg-7lGPCoyqtjgS2KakhKL9i_aS0zztqFKmOpqgqNe5oTuAFYM78=w240-h480-rw" alt="Keeta logo" />
+      <div class="app-market-label">
+        <span>Get it on</span>
+        <span>Google Play</span>
       </div>
-      <!-- Play icon -->
-       
     </a>
-
     <!-- HungerStation - App Store -->
-    <a href="https://apps.apple.com/us/app/hungerstation/id596011949" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;padding:8px;border-radius:14px;background:#fec305;text-decoration:none;box-shadow:0 12px 30px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.5);transition:transform .12s ease;outline:none;"
-       onmouseover="this.style.transform='translateY(-3px)';" onmouseout="this.style.transform='translateY(0)';" aria-label="HungerStation on the App Store">
-      <!-- Replace with HungerStation logo -->
-    
-      <img src="https://play-lh.googleusercontent.com/jj4b72akyWYaEeLnhmOh9zJjvWk_4pPSWxiQNhUEA9nJjoomycfl7Gf9l09NPJXolL0=w240-h480-rw" alt="HungerStation logo" style="width:32px;height:32px;border-radius:7px;object-fit:cover;flex-shrink:0;margin-right:7px;margin-left:7px;border:1px solid rgba(0,0,0,0.06);" />
-      <div style="display:flex;flex-direction:column;color:#111;">
-        <span style="font-size:8px;font-weight:600;opacity:0.95;">Download on</span>
-        <span style="font-size:12px;font-weight:800;letter-spacing:0.1px;">App Store</span>
+    <a href="https://apps.apple.com/us/app/hungerstation/id596011949" target="_blank" rel="noopener noreferrer" class="app-market-btn" aria-label="HungerStation on the App Store">
+      <img src="https://play-lh.googleusercontent.com/jj4b72akyWYaEeLnhmOh9zJjvWk_4pPSWxiQNhUEA9nJjoomycfl7Gf9l09NPJXolL0=w240-h480-rw" alt="HungerStation logo" />
+      <div class="app-market-label">
+        <span>Download on</span>
+        <span>App Store</span>
       </div>
      </a>
-
     <!-- HungerStation - Google Play -->
-    <a href="https://play.google.com/store/apps/details?id=com.hungerstation.android.web" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;padding:8px;border-radius:14px;background:#fec305;text-decoration:none;box-shadow:0 12px 30px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.5);transition:transform .12s ease;outline:none;"
-       onmouseover="this.style.transform='translateY(-3px)';" onmouseout="this.style.transform='translateY(0)';" aria-label="HungerStation on Google Play">
-     
-      <img src="https://play-lh.googleusercontent.com/jj4b72akyWYaEeLnhmOh9zJjvWk_4pPSWxiQNhUEA9nJjoomycfl7Gf9l09NPJXolL0=w240-h480-rw" alt="HungerStation logo" style="width:32px;height:32px;border-radius:7px;object-fit:cover;flex-shrink:0;margin-right:7px;margin-left:7px;border:1px solid rgba(0,0,0,0.06);" />
-      <div style="display:flex;flex-direction:column;color:#111;">
-        <span style="font-size:8px;font-weight:600;opacity:0.95;">Get it on</span>
-        <span style="font-size:12px;font-weight:800;letter-spacing:0.1px;">Google Play</span>
+    <a href="https://play.google.com/store/apps/details?id=com.hungerstation.android.web" target="_blank" rel="noopener noreferrer" class="app-market-btn" aria-label="HungerStation on Google Play">
+      <img src="https://play-lh.googleusercontent.com/jj4b72akyWYaEeLnhmOh9zJjvWk_4pPSWxiQNhUEA9nJjoomycfl7Gf9l09NPJXolL0=w240-h480-rw" alt="HungerStation logo" />
+      <div class="app-market-label">
+        <span>Get it on</span>
+        <span>Google Play</span>
       </div>
-    
     </a>
-
-  </div>
-
-
-    <!-- <a href="https://apps.apple.com/sa/app/keeta/id6476895314" target="_blank">
-        <img src="https://play-lh.googleusercontent.com/Vj2KBgg77BnwlCXlg-7lGPCoyqtjgS2KakhKL9i_aS0zztqFKmOpqgqNe5oTuAFYM78=w240-h480-rw" 
-             alt="Keeta App" style="height:60px;">
-    </a>
-    <a href="https://play.google.com/store/apps/details?id=com.sankuai.sailor.afooddelivery" target="_blank">
-        <img src="https://play-lh.googleusercontent.com/Vj2KBgg77BnwlCXlg-7lGPCoyqtjgS2KakhKL9i_aS0zztqFKmOpqgqNe5oTuAFYM78=w240-h480-rw" 
-             alt="Keeta App" style="height:60px;">
-    </a>
-
-    <a href="https://apps.apple.com/sa/app/hungerstation/id590377750" target="_blank">
-        <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/cc/7e/e7/cc7ee712-0d27-28ef-8f56-9292b213938e/AppIcon-0-0-1x_U007epad-0-1-0-0-85-220.png/460x0w.webp" 
-             alt="Hungerstation App" style="height:60px;">
-    </a>
-    <a href="https://play.google.com/store/apps/details?id=com.hungerstation.android.web" target="_blank">
-        <img src="https://play-lh.googleusercontent.com/jj4b72akyWYaEeLnhmOh9zJjvWk_4pPSWxiQNhUEA9nJjoomycfl7Gf9l09NPJXolL0=w240-h480-rw" 
-             alt="Hungerstation App" style="height:60px;">
-    </a> -->
 </div>
           </div>
         </div>
